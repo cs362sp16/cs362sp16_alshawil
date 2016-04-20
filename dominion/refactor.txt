@@ -1,0 +1,1 @@
+I refactored the code inside the function cardEffect and created 5 functions to minimize and organize the switch statment in cardEffect. The 5 functions are for the card cases which are adventurer,council_room,feast,mine, and remodel. After refactoring the cardEffect's function, got smaller in term of lines and has more organized looking.

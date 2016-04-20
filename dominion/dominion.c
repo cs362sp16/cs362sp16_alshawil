@@ -1315,8 +1315,8 @@ int mineCard(int currentPlayer,struct gameState *state, int choice1,int choice2,
 	{
 	  return -1;
 	}
-
-      gainCard(choice2, state, 2, currentPlayer);
+      //gainCard(choice2, state, 2, currentPlayer);
+      gainCard(choice1, state, 2, currentPlayer);
 
       //discard card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -1346,8 +1346,8 @@ int remodelCard(int currentPlayer,struct gameState *state, int choice1,int choic
       gainCard(choice2, state, 0, currentPlayer);
 
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-
+      //discardCard(handPos, currentPlayer, state, 0);
+      discardCard(0, currentPlayer, state, 0);
       //discard trashed card
       for (i = 0; i < state->handCount[currentPlayer]; i++)
 	{
