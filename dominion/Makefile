@@ -41,7 +41,21 @@ cardtest4: cardtest4.c
 
 unittests: unittest1 unittest2 unittest3 unittest4
 cardtests: cardtest1 cardtest2 cardtest3 cardtest4
-all: playdom player unittests cardtests
+
+unittestresults.out: unittests
+	rm -f unittestresults.out
+	./unittest1 >> unittestresults.out
+	echo "TEST" >> unittestresults.out
+	./unittest2 >> unittestresults.out
+	echo "TEST" >> unittestresults.out
+	./unittest3 >> unittestresults.out
+	echo "TEST" >> unittestresults.out
+	./unittest3 >> unittestresults.out
+	echo "TEST" >> unittestresults.out
+	./unittest4 >> unittestresults.out
+	echo "TEST" >> unittestresults.out
+		
+all: playdom player
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -f *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe unittestresults.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
