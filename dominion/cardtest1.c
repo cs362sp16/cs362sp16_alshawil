@@ -30,4 +30,5 @@ int main() {
   myassert(delta == 3, "USED smithy card but Did not get three cards!");
 
   checkasserts();
+  return 0;
 }

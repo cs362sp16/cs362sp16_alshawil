@@ -29,4 +29,5 @@ int main() {
   myassert(ShuffleStatus == -1, "Can't Shuffle one card?!");
 
   checkasserts();
+  return 0;
 }

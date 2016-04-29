@@ -1,0 +1,3 @@
+By writing my unit tests for the function fullDeckCount I realized the function may not be the cause for a bug but actually helped to show me that the cards I supply to initialize the game with, turned out, some of them goes missing even though I do supply the card’ name to the function but return a count of 0.
+The bug could be caused by initializeGame or fullDeckCount does not do correct count for a given card.
+

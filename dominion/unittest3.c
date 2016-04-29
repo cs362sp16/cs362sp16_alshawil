@@ -29,4 +29,5 @@ int main() {
 
 
   checkasserts();
+  return 0;
 }

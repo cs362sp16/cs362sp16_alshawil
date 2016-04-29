@@ -37,4 +37,5 @@ int main() {
   myassert(actionDelta == 2, "USED village card but got no action increase or got more than two actions!");
 
   checkasserts();
+  return 0;
 }

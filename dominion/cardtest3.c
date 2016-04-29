@@ -37,4 +37,5 @@ int main() {
   myassert(actionDelta == 1, "USED great_hall card but got no action increase or got more than one action!");
 
   checkasserts();
+  return 0;
 }

@@ -39,4 +39,5 @@ int main() {
   myassert(BuysDelta == 1, "USED council_roomCard card but got no action increase or got more than one action!");
 
   checkasserts();
+  return 0;
 }

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CFLAGS = -Wall -fpic -coverage -lm
 
 rngs.o: rngs.h rngs.c
@@ -14,6 +16,9 @@ interface.o: interface.h interface.c
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
+
+myassert.o: myassert.c
+	gcc -c myassert.c -g $(CFLAGS)
 
 unittest1: unittest1.c
 	gcc -o unittest1 myassert.c unittest1.c dominion.o rngs.o interface.o $(CFLAGS)
@@ -42,19 +47,40 @@ cardtest4: cardtest4.c
 unittests: unittest1 unittest2 unittest3 unittest4
 cardtests: cardtest1 cardtest2 cardtest3 cardtest4
 
-unittestresults.out: unittests
+unittestresults.out: unittests cardtests
 	rm -f unittestresults.out
+	echo "initializeGame unit tests" >> unittestresults.out
 	./unittest1 >> unittestresults.out
-	echo "TEST" >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	
+	echo "shuffle unit tests" >> unittestresults.out
 	./unittest2 >> unittestresults.out
-	echo "TEST" >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	
+	echo "playCard unit tests" >> unittestresults.out
 	./unittest3 >> unittestresults.out
-	echo "TEST" >> unittestresults.out
-	./unittest3 >> unittestresults.out
-	echo "TEST" >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	
+	echo "fullDeckCount unit tests" >> unittestresults.out
 	./unittest4 >> unittestresults.out
-	echo "TEST" >> unittestresults.out
-		
+	gcov dominion.c >> unittestresults.out
+
+	echo "smithy unit tests" >> unittestresults.out
+	./cardtest1 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+
+	echo "village unit tests" >> unittestresults.out	
+	gcov dominion.c >> unittestresults.out
+	./cardtest2 >> unittestresults.out
+	
+	echo "great_hall unit tests" >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
+	./cardtest3 >> unittestresults.out
+	
+	echo "council_roomCard unit tests" >> unittestresults.out
+	./cardtest4 >> unittestresults.out
+	gcov dominion.c >> unittestresults.out	
+
 all: playdom player
 
 clean:
