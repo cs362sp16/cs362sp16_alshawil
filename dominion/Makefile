@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CFLAGS = -Wall -fpic -coverage -lm
+CFLAGS = -Wall -fpic -coverage -lm -fprofile-arcs -ftest-coverage
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -44,6 +44,15 @@ cardtest3: cardtest3.c
 cardtest4: cardtest4.c
 	gcc -o cardtest4 myassert.c cardtest4.c dominion.o rngs.o interface.o $(CFLAGS)
 
+randomtestadventurer: randomtestadventurer.c
+	gcc -o randomtestadventurer myassert.c randomtestadventurer.c dominion.o rngs.o interface.o $(CFLAGS)
+
+randomtestcard1: randomtestcard1.c
+	gcc -o randomtestcard1 myassert.c randomtestcard1.c dominion.o rngs.o interface.o $(CFLAGS)
+
+randomtestcard2: randomtestcard2.c
+	gcc -o randomtestcard2 myassert.c randomtestcard2.c dominion.o rngs.o interface.o $(CFLAGS)
+
 unittests: unittest1 unittest2 unittest3 unittest4
 cardtests: cardtest1 cardtest2 cardtest3 cardtest4
 
@@ -79,9 +88,27 @@ unittestresults.out: unittests cardtests
 	
 	echo "council_roomCard unit tests" >> unittestresults.out
 	./cardtest4 >> unittestresults.out
-	gcov dominion.c >> unittestresults.out	
+	gcov dominion.c -b -c >> unittestresults.out
+		
+randomtestadventurer.out: randomtestadventurer
+	rm -f randomtestadventurer.out
+	echo "randomtestadventurer random tests" >> randomtestadventurer.out
+	./randomtestadventurer 42>> randomtestadventurer.out
+	gcov dominion.c -b >> randomtestadventurer.out
+	
+randomtestcard1.out: randomtestcard1
+	rm -f randomtestcard1.out
+	echo "randomtestcard1 random tests" >> randomtestcard1.out
+	./randomtestcard1 42>> randomtestcard1.out
+	gcov dominion.c -b >> randomtestcard1.out
 
+randomtestcard2.out: randomtestcard2
+	rm -f randomtestcard2.out
+	echo "randomtestcard2 random tests" >> randomtestcard2.out
+	./randomtestcard2 42>> randomtestcard2.out
+	gcov dominion.c -b >> randomtestcard2.out
+			
 all: playdom player
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe unittestresults.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -f *.o playdom.exe playdom test.exe test player randomtestadventurer unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe unittestresults.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
