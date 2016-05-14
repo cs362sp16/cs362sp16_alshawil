@@ -5,5 +5,3 @@ On the other hand, the random test for testing council room card is able to dete
 Also, the random tests for steward card went well and the random tests did not detect any odd behavior caused by the function.
 Of course random testing is better than manual testing and by using the random testing I was able to detect a bug in council room card’s function while the manual testing could not detect this bug.
 
-Update: The random test for adventurer card does not have 100% coverage all the time. But, it reaches at least 93%.
-
