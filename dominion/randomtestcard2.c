@@ -1,8 +1,8 @@
 #include "dominion.h"
-#define Limit 10
+#define Limit 100
 /*
  *
- * Testing  council_room card already wrote a manual unit test in cardtest4.c
+ * Random test for  steward card
  */
 int main(int argc ,char** argv) {
 
