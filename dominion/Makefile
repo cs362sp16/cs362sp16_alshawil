@@ -20,6 +20,9 @@ player: player.c interface.o
 myassert.o: myassert.c
 	gcc -c myassert.c -g $(CFLAGS)
 
+testdom: dominion.o testdominion.c
+	gcc -o testdominion testdominion.c -g dominion.o rngs.o $(CFLAGS)
+
 unittest1: unittest1.c
 	gcc -o unittest1 myassert.c unittest1.c dominion.o rngs.o interface.o $(CFLAGS)
 
