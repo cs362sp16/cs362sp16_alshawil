@@ -1,0 +1,7 @@
+The random tests for adventurer, cardtest1 and cardtst2 went well and all the random tests have 100% statement and branch coverage.
+All random tests are done in a similar way which is to check before using any card’s function and do another check after using the function. Then, the difference can be asserted to check if the expected behavior has happened or to through a failed message.
+The random tests for adventurer card are about 15 thousand tests and they take less than a second to complete. The percentage of failure is 0% while the percentage of passing for all tests is 100%.
+On the other hand, the random test for testing council room card is able to detect failure cases. Based on the failing test cases the random test never reaches 100% of success. The bug results after the last player uses the council room card and the player will never receive complete four cards. The random test for this function was able to detect this bug while the manual test in cardtest4.c was not able to detect this bug. 
+Also, the random tests for steward card went well and the random tests did not detect any odd behavior caused by the function.
+Of course random testing is better than manual testing and by using the random testing I was able to detect a bug in council room card’s function while the manual testing could not detect this bug.
+

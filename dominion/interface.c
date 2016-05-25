@@ -147,13 +147,13 @@ int getCardCost(int card) {
 void printHand(int player, struct gameState *game) {
   int handCount = game->handCount[player];
   int handIndex;
-  printf("Player %d's hand:\n", player);
-  if(handCount > 0) printf("#  Card\n");
+  printf("	Player %d's hand:\n", player);
+  if(handCount > 0) printf("		#  Card\n");
   for(handIndex = 0; handIndex < handCount; handIndex++) {
     int card = game->hand[player][handIndex];
     char name[MAX_STRING_LENGTH];
     cardNumToName(card, name);
-    printf("%-2d %-13s\n", handIndex, name);
+    printf("		%-2d %-13s\n", handIndex, name);
   }
   printf("\n");
 }

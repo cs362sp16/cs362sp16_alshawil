@@ -20,8 +20,17 @@ player: player.c interface.o
 myassert.o: myassert.c
 	gcc -c myassert.c -g $(CFLAGS)
 
-testdom: dominion.o testdominion.c
-	gcc -o testdominion testdominion.c -g dominion.o rngs.o $(CFLAGS)
+testdom: dominion.o testdominion.c interface.o
+	gcc -o testdominion testdominion.c -g dominion.o rngs.o interface.o $(CFLAGS)
+
+runtestdom: testdom
+	./testdominion 42
+	gcov -b dominion.c
+testdomininon.out: testdom
+	rm -f testdominion.out
+	echo "AI testdominion" >> testdomininon.out
+	./testdominion 42 >> testdominion.out
+	gcov dominion.c >> testdominion.out
 
 unittest1: unittest1.c
 	gcc -o unittest1 myassert.c unittest1.c dominion.o rngs.o interface.o $(CFLAGS)
@@ -96,7 +105,7 @@ unittestresults.out: unittests cardtests
 randomtestadventurer.out: randomtestadventurer
 	rm -f randomtestadventurer.out
 	echo "randomtestadventurer random tests" >> randomtestadventurer.out
-	./randomtestadventurer 42>> randomtestadventurer.out
+	./randomtestadvetestdominion.outnturer 42>> randomtestadventurer.out
 	gcov dominion.c -b >> randomtestadventurer.out
 	
 randomtestcard1.out: randomtestcard1
@@ -114,4 +123,4 @@ randomtestcard2.out: randomtestcard2
 all: playdom player
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 randomtestcard2 randomtestadventurer unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe unittestresults.out *.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 randomtestcard2 randomtestadventurer unittest1 testdominion unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe unittestresults.out *.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
