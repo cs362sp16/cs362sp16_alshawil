@@ -50,6 +50,7 @@ int main (int argc, char** argv) {
 
 			for(i = 0; i < numHandCards(p); i++)
 			{
+
 				if (handCard(i, p) == smithy)
 				{
 					printf("	%d: smithy played from position %d\n", turn,i);
@@ -121,9 +122,9 @@ int main (int argc, char** argv) {
 					printf("	%d: ambassador played from position %d\n", turn,i);
 					playCard(i, 1, 1, 1, p);break;
 				}
-				else if (handCard(i, p) == ambassador)
+				else if (handCard(i, p) == remodel)
 				{
-					printf("	%d: ambassador played from position %d\n", turn,i);
+					printf("	%d: remodel played from position %d\n", turn,i);
 					playCard(i, 1, 1, 1, p);break;
 				}
 			}

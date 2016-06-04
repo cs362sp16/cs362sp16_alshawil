@@ -1,0 +1,66 @@
+initializeGame unit tests
+TEST SUCCESSFULLY COMPLETED.
+File 'dominion.c'
+Lines executed:28.75% of 560
+Creating 'dominion.c.gcov'
+
+shuffle unit tests
+TEST SUCCESSFULLY COMPLETED.
+File 'dominion.c'
+Lines executed:28.93% of 560
+Creating 'dominion.c.gcov'
+
+playCard unit tests
+Phase:0
+numActions:1
+	FAILED ASSERTION: Player was not able to play card!
+File 'dominion.c'
+Lines executed:30.71% of 560
+Creating 'dominion.c.gcov'
+
+fullDeckCount unit tests
+DeckCount:0
+	FAILED ASSERTION: There should be at least one steward card
+	FAILED ASSERTION: There should be at least one minion card
+	FAILED ASSERTION: There should be at least one province card
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+	FAILED ASSERTION: There should be at least one card from the cards array
+File 'dominion.c'
+Lines executed:32.14% of 560
+Creating 'dominion.c.gcov'
+
+smithy unit tests
+TEST SUCCESSFULLY COMPLETED.
+File 'dominion.c'
+Lines executed:33.21% of 560
+Creating 'dominion.c.gcov'
+
+village unit tests
+File 'dominion.c'
+Lines executed:33.21% of 560
+Creating 'dominion.c.gcov'
+
+	FAILED ASSERTION: USED village card but got no action increase or got more than two actions!
+great_hall unit tests
+File 'dominion.c'
+Lines executed:34.29% of 560
+Creating 'dominion.c.gcov'
+
+TEST SUCCESSFULLY COMPLETED.
+council_roomCard unit tests
+TEST SUCCESSFULLY COMPLETED.
+File 'dominion.c'
+Lines executed:35.00% of 560
+Branches executed:30.46% of 417
+Taken at least once:23.26% of 417
+Calls executed:28.42% of 95
+Creating 'dominion.c.gcov'
+

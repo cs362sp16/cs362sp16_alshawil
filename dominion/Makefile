@@ -105,13 +105,13 @@ unittestresults.out: unittests cardtests
 randomtestadventurer.out: randomtestadventurer
 	rm -f randomtestadventurer.out
 	echo "randomtestadventurer random tests" >> randomtestadventurer.out
-	./randomtestadvetestdominion.outnturer 42>> randomtestadventurer.out
+	./randomtestadventurer 42 >> randomtestadventurer.out
 	gcov dominion.c -b >> randomtestadventurer.out
 	
 randomtestcard1.out: randomtestcard1
 	rm -f randomtestcard1.out
 	echo "randomtestcard1 random tests" >> randomtestcard1.out
-	./randomtestcard1 42>> randomtestcard1.out
+	./randomtestcard1 42 >> randomtestcard1.out
 	gcov dominion.c -b >> randomtestcard1.out
 
 randomtestcard2.out: randomtestcard2
@@ -123,4 +123,4 @@ randomtestcard2.out: randomtestcard2
 all: playdom player
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 randomtestcard2 randomtestadventurer unittest1 testdominion unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe unittestresults.out *.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 randomtestcard2 randomtestadventurer unittest1 testdominion unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe *.out *.gcov *.gcda *.gcno *.so *.a *.dSYM

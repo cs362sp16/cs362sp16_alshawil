@@ -1,0 +1,11 @@
+randomtestcard2 random tests
+Passed: 306, Failed: 0
+Passed: 100.000000%, Failed: 0.000000
+TEST SUCCESSFULLY COMPLETED.
+File 'dominion.c'
+Lines executed:29.03% of 558
+Branches executed:26.62% of 417
+Taken at least once:19.42% of 417
+Calls executed:17.89% of 95
+Creating 'dominion.c.gcov'
+

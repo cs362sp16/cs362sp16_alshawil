@@ -1,0 +1,13 @@
+Sourse of problem: council_room_function function
+problem: 
+    for(i=0; i<3; i++)
+        drawCard(currentPlayer, state);
+
+Solution:
+    for(i=0; i<4; i++)
+        drawCard(currentPlayer, state);
+
+My assert message:
+
+randomtestcard1 random tests
+	FAILED ASSERTION: Test Failed: The difference in handcount before and after using council_room card is more or less than 4 cards.

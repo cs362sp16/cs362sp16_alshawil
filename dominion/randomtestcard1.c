@@ -9,7 +9,7 @@ int main(int argc ,char** argv) {
 	int Seed = atoi(argv[1]);
 	SelectStream(1);
 	PutSeed(Seed);
-	int i,j,k,Players,before,after,is_failed,passed,failed,tests;
+	int bonus[1],i,j,k,Players,before,after,is_failed,passed,failed,tests;
 	passed=failed=tests=0;
 
 	struct gameState g,reset;
@@ -30,11 +30,11 @@ int main(int argc ,char** argv) {
 			//printf("		Player %d\n",j);
 			//printf("			Before HandCount... %d\n",g.handCount[j]);
 			before=g.handCount[j];
-			council_roomCard(j,&g,0);
+			cardEffect(council_room,-1, -1, -1, &g, 0, bonus);
 			//printf("			After HandCount... %d\n",g.handCount[j]);
 			after=g.handCount[j];
 			endTurn(&g);
-			is_failed=myassert((after - before) == 3,"Test Failed: The difference in handcount before and after using adventurer card is more or less than 4 cards.");
+			is_failed=myassert((after - before) == 3,"Test Failed: The difference in handcount before and after using council_room card is more or less than 4 cards.");
 			if(is_failed)
 			{
 				failed = failed + 1;
@@ -71,7 +71,7 @@ int main(int argc ,char** argv) {
 			//printf("		Player %d\n",j);
 			//printf("			Before numBuys... %d\n",g.numBuys);
 			before=g.numBuys;
-			council_roomCard(j,&g,0);
+			cardEffect(council_room,-1, -1, -1, &g, 0, bonus);
 			//printf("			After numBuys... %d\n",g.numBuys);
 			after=g.numBuys;
 			endTurn(&g);

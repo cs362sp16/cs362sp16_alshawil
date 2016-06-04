@@ -1,0 +1,12 @@
+Sourse of problem: village_function function
+problem: state->numActions = state->numActions + 3;
+Solution: state->numActions = state->numActions + 2;
+
+My assert message:
+
+village unit tests
+File 'dominion.c'
+Lines executed:33.21% of 560
+Creating 'dominion.c.gcov'
+
+	FAILED ASSERTION: USED village card but got no action increase or got more than two actions!

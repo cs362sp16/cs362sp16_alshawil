@@ -1,0 +1,12 @@
+Sourse of problem: embargoFunc function
+problem: state->coins = state->coins + 1;
+Solution: state->coins = state->coins + 2;
+
+My assert message:
+
+village unit tests
+File 'dominion.c'
+Lines executed:33.21% of 560
+Creating 'dominion.c.gcov'
+
+	FAILED ASSERTION: USED village card but got no action increase or got more than two actions!
