@@ -1,5 +1,5 @@
 #include "dominion.h"
-#define Limit 100
+#define Limit 1
 /*
  *
  * Testing  council_room card already wrote a manual unit test in cardtest4.c
@@ -38,10 +38,12 @@ int main(int argc ,char** argv) {
 			if(is_failed)
 			{
 				failed = failed + 1;
+
 			}
 			else
 			{
 				passed = passed + 1;
+
 			}
 			tests = tests + 1;
 

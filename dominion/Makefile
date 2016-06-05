@@ -23,6 +23,9 @@ myassert.o: myassert.c
 testdom: dominion.o testdominion.c interface.o
 	gcc -o testdominion testdominion.c -g dominion.o rngs.o interface.o $(CFLAGS)
 
+tarantulatestdom: dominion.o tarantulatestdominion.c interface.o
+	gcc -o tarantulatestdominion tarantulatestdominion.c -g dominion.o rngs.o interface.o $(CFLAGS)
+
 runtestdom: testdom
 	./testdominion 42
 	gcov -b dominion.c
@@ -100,7 +103,7 @@ unittestresults.out: unittests cardtests
 	
 	echo "council_roomCard unit tests" >> unittestresults.out
 	./cardtest4 >> unittestresults.out
-	gcov dominion.c -b -c >> unittestresults.out
+	gcov dominion.c >> unittestresults.out
 		
 randomtestadventurer.out: randomtestadventurer
 	rm -f randomtestadventurer.out
@@ -123,4 +126,4 @@ randomtestcard2.out: randomtestcard2
 all: playdom player
 
 clean:
-	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 randomtestcard2 randomtestadventurer unittest1 testdominion unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe *.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -f *.o playdom.exe playdom test.exe test player randomtestcard1 tarantulatestdominion randomtestcard2 randomtestadventurer unittest1 testdominion unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 player.exe testInit testInit.exe *.out *.gcov *.gcda *.gcno *.so *.a *.dSYM
