@@ -17,7 +17,7 @@ def getLines(f):
         
 
 def main():
-    Tests = 50
+    Tests = 200
     #Create our files to redirect stderr and stdout
     Mystdout = open("stdout.txt","w")
     Mystderr = open("stderr.txt","w")
@@ -25,7 +25,6 @@ def main():
     subprocess.call(["gcov","dominion.c"],stdout=Mystdout,stderr=Mystderr)
     domfile = open("dominion.c.gcov","r")
     Lines = getLines(domfile)
-    print Lines
     domfile.close()
     passedTests = 0
     failedTests = 0

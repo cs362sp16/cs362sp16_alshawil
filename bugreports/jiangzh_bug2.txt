@@ -1,4 +1,7 @@
 Sourse of problem: village_function function
+
+The function should increace the number of actions by two instead of three.
+
 problem: state->numActions = state->numActions + 3;
 Solution: state->numActions = state->numActions + 2;
 
@@ -10,3 +13,6 @@ Lines executed:33.21% of 560
 Creating 'dominion.c.gcov'
 
 	FAILED ASSERTION: USED village card but got no action increase or got more than two actions!
+
+Severity: Minor
+Priority: Low

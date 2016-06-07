@@ -1,3 +1,9 @@
 Sourse of problem: embargoFunc function
+
+The function should only increase the number of coins by two instead of 1. 
+
 problem: state->coins = state->coins + 1;
 Solution: state->coins = state->coins + 2;
+
+Severity: Minor
+Priority: Low

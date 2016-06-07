@@ -1,0 +1,33 @@
+For part three of the final project I decided to implement the tarantula formula using python. Before implementing the formula, I had to modify the testdom.c and rename it to tarantulatestdom.c in order to apply the tarantula on the program. The reason I decided to use testdom as the base for the testing phase for tarantula is because testdom plays the game randomly and it would be a great approach to apply the tarantula formula on it to locate the most failing percentage lines on dominion.c.
+The tarantula.py runs tarantulatestdom.c 200 times and each time the resulted. gcov file opened and there are two arrays one for passing tests and the other for failing tests to hold the lines of the parsed. gcov file based on certain lines whether it got executed or not. Also, two variables to hold the passing test and failing tests. At the end, the tarantula formula will be applied and the result will be stored in to an array. Finally, the suspiciousness array will be sorted and only the result with the values of percentages that are greater than 0 will be printed to the console.
+Some sample from my output of the first 12 lines using the tarantula formula. 
+Passed Tests: 80 Failed Tests: 20
+suspiciousness 0.869565 Line 610
+suspiciousness 0.750000 Line 330
+suspiciousness 0.750000 Line 596
+suspiciousness 0.727273 Line 687
+suspiciousness 0.727273 Line 1336
+suspiciousness 0.727273 Line 1339
+suspiciousness 0.727273 Line 1341
+suspiciousness 0.714286 Line 907
+suspiciousness 0.714286 Line 909
+suspiciousness 0.714286 Line 914
+suspiciousness 0.705882 Line 612
+suspiciousness 0.685714 Line 324
+Another sample:
+Passed Tests: 161 Failed Tests: 39
+suspiciousness 0.805000 Line 907
+suspiciousness 0.805000 Line 909
+suspiciousness 0.805000 Line 914
+suspiciousness 0.762517 Line 610
+suspiciousness 0.733485 Line 596
+suspiciousness 0.673640 Line 687
+suspiciousness 0.673640 Line 1336
+suspiciousness 0.673640 Line 1339
+suspiciousness 0.673640 Line 1341
+suspiciousness 0.673640 Line 606
+suspiciousness 0.634795 Line 330
+The lines 1336,1339,1341 are coming from the remoelCard function. The line of this function always show up on when running the tarantula.py. In fact, this function is actually has a bug and I have discussed this bug on part two of the final project located in debugging.txt.
+The tarantula formula proved to me that it is helpful in my case since I am using it on a game that is running randomly which can buy and play cards. Also, the formula helped me to locate the lines where my testdom is failing, even when running testdom there won’t be any odd behavior on the output. However, behind the scenes testdom actually try to play a card while the conditions for this such card are missing therefore the testdom will continue running but at some point at least one player would not play a card since there is a failure when playing or buying a card.
+Finally, the tarantula formula helped me to test whether testdom is a smart AI or a reasonable AI which can make mistakes. The results turned out to be that testdom is not a smart AI and in fact it’s is a reasonable AI because it can make wrong decisions while playing and due to the bugs in remodelCard testdom is a reasonable random game.
+
